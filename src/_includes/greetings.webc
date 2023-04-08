@@ -1,0 +1,6 @@
+<ul>
+  <li webc:for="(greeting, index) of greetings" :id="greeting.id">
+    <span @text="index"></span>
+    <span @text="greeting.text"></span>
+  </li>
+</ul>

@@ -1,0 +1,42 @@
+---
+myGreetings: greetings
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Greetings</h1>
+
+    <ul>
+      {% for greeting in greetings %}
+        <li id="{{ greeting.id }}">
+          {{ greeting.text }}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% renderTemplate "webc",
+    greetings %}
+    <greetings></greetings>
+    {% endrenderTemplate %}
+
+    {% renderTemplate "webc",
+    myGreetings %}
+    <ul>
+      <li webc:for="greeting of myGreetings" @text="item.text"></li>
+    </ul>
+    {% endrenderTemplate %}
+
+  </body>
+</html>

@@ -1,0 +1,5 @@
+[
+  { "id": "12345", "text": "Hello, world!" },
+  { "id": "67890", "text": "Hello, universe!" },
+  { "id": "90210", "text": "[flatly] Hello, Newman." }
+]
