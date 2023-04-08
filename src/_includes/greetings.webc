@@ -1,5 +1,24 @@
+<script webc:setup>
+  console.log(greetings);
+  // Output: undefined
+
+  console.log($data);
+  /**
+   Output:
+   {
+    _: [
+      { id: '12345', text: 'Hello, world!' },
+      { id: '67890', text: 'Hello, universe!' },
+      { id: '90210', text: '[flatly] Hello, Newman.' }
+    ],
+    page: { ... }
+    eleventy: { ... }
+   }
+  */
+</script>
+
 <ul>
-  <li webc:for="(greeting, index) of greetings" :id="greeting.id">
+  <li webc:for="(greeting, index) of $data._" :id="greeting.id">
     <span @text="index"></span>
     <span @text="greeting.text"></span>
   </li>
