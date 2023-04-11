@@ -7,6 +7,18 @@ module.exports = (eleventyConfig) => {
   });
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+  eleventyConfig.addPairedNunjucksAsyncShortcode(
+    "renderWebC",
+    async function (content) {
+      return eleventyConfig.javascriptFunctions.renderTemplate.call(
+        this,
+        content,
+        "webc",
+        this.ctx
+      );
+    }
+  );
+
   return {
     dir: {
       input: "src",

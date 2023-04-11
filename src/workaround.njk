@@ -1,0 +1,24 @@
+---
+globalData: hi
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workaround Test</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    {% renderWebC %}
+    <test :arg="globalData"></test>
+    <greetings :greetings="greetings"></greetings>
+    {% endrenderWebC %}
+  </body>
+</html>

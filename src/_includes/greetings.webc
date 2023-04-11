@@ -1,6 +1,6 @@
 <script webc:setup>
   console.log(greetings);
-  // Output: undefined
+  // Output: undefined via renderTemplate example in index.njk
 
   console.log($data);
   /**
@@ -18,7 +18,7 @@
 </script>
 
 <ul>
-  <li webc:for="(greeting, index) of $data._" :id="greeting.id">
+  <li webc:for="(greeting, index) of greetings" :id="greeting.id">
     <span @text="index"></span>
     <span @text="greeting.text"></span>
   </li>
